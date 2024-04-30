@@ -52,7 +52,7 @@ function Home() {
           <div
             onClick={() => {
               setState1(false);
-              setCount(count - 1);
+              if(count != 0){setCount(count - 1);}
             }}
             className={`flex ${
               state1 && "vlgb"
@@ -85,7 +85,7 @@ function Home() {
           <div
             onClick={() => {
               setState2(false);
-              setCount(count - 1);
+              if(count != 0){setCount(count - 1);}
             }}
             className={`flex ${
               state2 && "vlgb"
@@ -115,7 +115,7 @@ function Home() {
           <div
             onClick={() => {
               setState3(false);
-              setCount(count - 1);
+              if(count != 0){setCount(count - 1);}
             }}
             className={`flex ${
               state3 && "vlgb"
