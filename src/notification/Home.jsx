@@ -12,12 +12,14 @@ import smith from "../assets/images/smith.webp";
 
 function Home() {
     const [state1,setState1]=useState(true)
-const [state2,setState2]=useState(true) 
+    const [state2,setState2]=useState(true) 
     const [state3, setState3] = useState(true);
+    const [count,setCount] = useState(3)
     const MarkAll = () =>{
         setState1(false)
         setState2(false)
         setState3(false);
+        setCount(0)
     }
   return (
     <main className="vlgb flex items-center sm:py-20 justify-center min-h-screen w-screen">
@@ -31,11 +33,14 @@ const [state2,setState2]=useState(true)
               Notifications
             </h3>
             <button className="blue text-white font-[500] rounded-[6px] px-2 py-[1px] border-none ">
-              3
+              {count}
             </button>
           </div>
           <div>
-            <button onClick={MarkAll} className=" vdbc cursor-pointer hover:text-[#0a317b] transition-all opacity-[0.8] ">
+            <button
+              onClick={MarkAll}
+              className=" vdbc cursor-pointer hover:text-[#0a317b] transition-all opacity-[0.8] "
+            >
               Mark all as read
             </button>
           </div>
@@ -44,7 +49,15 @@ const [state2,setState2]=useState(true)
         {/* Content Section */}
         <section className="mt-6 flex flex-col gap-3 ">
           {/* Single content */}
-          <div className={`flex ${state1 && 'vlgb'} relative cursor-pointer px-3 py-4 rounded-[8px] items-center justify-start `}>
+          <div
+            onClick={() => {
+              setState1(false);
+              setCount(count - 1);
+            }}
+            className={`flex ${
+              state1 && "vlgb"
+            } relative cursor-pointer px-3 py-4 rounded-[8px] items-center justify-start `}
+          >
             {/* Img */}
             <div className="mr-3 w-[60px] ">
               <img src={mark} className="h-[40px] w-[40px] " alt="" />
@@ -59,7 +72,9 @@ const [state2,setState2]=useState(true)
                 <span className="font-[800] hover:text-[#0a317b] opacity-[0.7] ">
                   My first tournament today!
                 </span>
-               { state1 && <span className="h-[6px] sm:-right-4 right-2 top-4 w-[6px] rounded-[50%] red absolute  "></span>}
+                {state1 && (
+                  <span className="h-[6px] sm:-right-4 right-2 top-4 w-[6px] rounded-[50%] red absolute  "></span>
+                )}
               </p>
               <p className="text-[13px] opacity-[0.7] ">1m ago</p>
             </div>
@@ -67,7 +82,15 @@ const [state2,setState2]=useState(true)
           </div>
 
           {/* Single content */}
-          <div className={`flex ${state2 && 'vlgb'} relative cursor-pointer px-3 py-4 rounded-[8px] items-center justify-start `}>
+          <div
+            onClick={() => {
+              setState2(false);
+              setCount(count - 1);
+            }}
+            className={`flex ${
+              state2 && "vlgb"
+            } relative cursor-pointer px-3 py-4 rounded-[8px] items-center justify-start `}
+          >
             {/* Img */}
             <div className="mr-3">
               <img src={angela} className="h-[40px] w-[40px] " alt="" />
@@ -79,7 +102,9 @@ const [state2,setState2]=useState(true)
                   Angela Gray{" "}
                 </span>
                 followed you{" "}
-                {state2 && <span className="h-[6px] -right-4 top-4 w-[6px] rounded-[50%] red absolute  "></span>}
+                {state2 && (
+                  <span className="h-[6px] -right-4 top-4 w-[6px] rounded-[50%] red absolute  "></span>
+                )}
               </p>
               <p className="text-[13px] opacity-[0.7] ">5m ago</p>
             </div>
@@ -87,7 +112,15 @@ const [state2,setState2]=useState(true)
           </div>
 
           {/* Single content */}
-          <div className={`flex ${state3 && 'vlgb'} relative cursor-pointer px-3 py-4 rounded-[8px] items-center justify-start `}>
+          <div
+            onClick={() => {
+              setState3(false);
+              setCount(count - 1);
+            }}
+            className={`flex ${
+              state3 && "vlgb"
+            } relative cursor-pointer px-3 py-4 rounded-[8px] items-center justify-start `}
+          >
             {/* Img */}
             <div className="mr-3 w-[60px] ">
               <img src={jacob} className="h-[40px] w-[40px] " alt="" />
@@ -102,7 +135,9 @@ const [state2,setState2]=useState(true)
                 <span className="font-[800] hover:text-[#0a317b] bc ">
                   Chess Club
                 </span>
-                {state3 && <span className="h-[6px] sm:-right-4 right-2 top-4 w-[6px] rounded-[50%] red absolute  "></span>}
+                {state3 && (
+                  <span className="h-[6px] sm:-right-4 right-2 top-4 w-[6px] rounded-[50%] red absolute  "></span>
+                )}
               </p>
               <p className="text-[13px] opacity-[0.7] ">1 day ago</p>
             </div>
@@ -167,11 +202,7 @@ const [state2,setState2]=useState(true)
           <div className="flex relative px-3 py-4 cursor-pointer rounded-[8px] items-center justify-start ">
             {/* Img */}
             <div className="mr-3 w-[40px] rounded-[50%] h-[40px]">
-              <img
-                src={nathan}
-                className="h-full w-full object-cover"
-                alt=""
-              />
+              <img src={nathan} className="h-full w-full object-cover" alt="" />
             </div>
             {/* Msg */}
             <div>
