@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import Test from './Test'
 import mark from '../assets/images/mark.webp'
 import chess from "../assets/images/chess.webp";
@@ -11,8 +11,16 @@ import smith from "../assets/images/smith.webp";
 
 
 function Home() {
+    const [state1,setState1]=useState(true)
+const [state2,setState2]=useState(true) 
+    const [state3, setState3] = useState(true);
+    const MarkAll = () =>{
+        setState1(false)
+        setState2(false)
+        setState3(false);
+    }
   return (
-    <main className="vlgb flex items-center py-20 justify-center min-h-screen w-screen">
+    <main className="vlgb flex items-center sm:py-20 justify-center min-h-screen w-screen">
       {/* <Test/> */}
       {/* Main Box */}
       <div className="white px-4 py-3 h-auto w-[650px] rounded-[20px] shadow-sm ">
@@ -27,14 +35,16 @@ function Home() {
             </button>
           </div>
           <div>
-            <button className=" vdbc cursor-pointer hover:text-[#0a317b] transition-all opacity-[0.8] ">Mark all as read</button>
+            <button onClick={MarkAll} className=" vdbc cursor-pointer hover:text-[#0a317b] transition-all opacity-[0.8] ">
+              Mark all as read
+            </button>
           </div>
         </section>
 
         {/* Content Section */}
         <section className="mt-6 flex flex-col gap-3 ">
           {/* Single content */}
-          <div className="flex vlgb relative cursor-pointer px-3 py-4 rounded-[8px] items-center justify-start ">
+          <div className={`flex ${state1 && 'vlgb'} relative cursor-pointer px-3 py-4 rounded-[8px] items-center justify-start `}>
             {/* Img */}
             <div className="mr-3 w-[60px] ">
               <img src={mark} className="h-[40px] w-[40px] " alt="" />
@@ -42,12 +52,14 @@ function Home() {
             {/* Msg */}
             <div>
               <p className="text-[15px] relative">
-                <span className="font-[800] hover:text-[#0a317b]">Mark Webber</span> reacted to your
-                recent post{" "}
+                <span className="font-[800] hover:text-[#0a317b]">
+                  Mark Webber
+                </span>{" "}
+                reacted to your recent post{" "}
                 <span className="font-[800] hover:text-[#0a317b] opacity-[0.7] ">
                   My first tournament today!
                 </span>
-                <span className="h-[6px] -right-4 top-4 w-[6px] rounded-[50%] red absolute  "></span>
+               { state1 && <span className="h-[6px] sm:-right-4 right-2 top-4 w-[6px] rounded-[50%] red absolute  "></span>}
               </p>
               <p className="text-[13px] opacity-[0.7] ">1m ago</p>
             </div>
@@ -55,7 +67,7 @@ function Home() {
           </div>
 
           {/* Single content */}
-          <div className="flex vlgb relative cursor-pointer px-3 py-4 rounded-[8px] items-center justify-start ">
+          <div className={`flex ${state2 && 'vlgb'} relative cursor-pointer px-3 py-4 rounded-[8px] items-center justify-start `}>
             {/* Img */}
             <div className="mr-3">
               <img src={angela} className="h-[40px] w-[40px] " alt="" />
@@ -67,7 +79,7 @@ function Home() {
                   Angela Gray{" "}
                 </span>
                 followed you{" "}
-                <span className="h-[6px] -right-4 top-4 w-[6px] rounded-[50%] red absolute  "></span>
+                {state2 && <span className="h-[6px] -right-4 top-4 w-[6px] rounded-[50%] red absolute  "></span>}
               </p>
               <p className="text-[13px] opacity-[0.7] ">5m ago</p>
             </div>
@@ -75,7 +87,7 @@ function Home() {
           </div>
 
           {/* Single content */}
-          <div className="flex vlgb relative cursor-pointer px-3 py-4 rounded-[8px] items-center justify-start ">
+          <div className={`flex ${state3 && 'vlgb'} relative cursor-pointer px-3 py-4 rounded-[8px] items-center justify-start `}>
             {/* Img */}
             <div className="mr-3 w-[60px] ">
               <img src={jacob} className="h-[40px] w-[40px] " alt="" />
@@ -83,10 +95,14 @@ function Home() {
             {/* Msg */}
             <div>
               <p className="text-[15px] relative ">
-                <span className="font-[800] hover:text-[#0a317b]">Jacob Thompson </span>
+                <span className="font-[800] hover:text-[#0a317b]">
+                  Jacob Thompson{" "}
+                </span>
                 has joined your group{" "}
-                <span className="font-[800] hover:text-[#0a317b] bc ">Chess Club</span>
-                <span className="h-[6px] -right-4 top-4 w-[6px] rounded-[50%] red absolute  "></span>
+                <span className="font-[800] hover:text-[#0a317b] bc ">
+                  Chess Club
+                </span>
+                {state3 && <span className="h-[6px] sm:-right-4 right-2 top-4 w-[6px] rounded-[50%] red absolute  "></span>}
               </p>
               <p className="text-[13px] opacity-[0.7] ">1 day ago</p>
             </div>
@@ -103,7 +119,9 @@ function Home() {
               {/* Msg */}
               <div>
                 <p className="text-[15px] relative ">
-                  <span className="font-[800] cursor-pointer hover:text-[#0a317b]">Rizky Hasanuddin </span>
+                  <span className="font-[800] cursor-pointer hover:text-[#0a317b]">
+                    Rizky Hasanuddin{" "}
+                  </span>
                   sent you a private message
                 </p>
                 <p className="text-[13px] opacity-[0.7] ">5m ago</p>
@@ -129,7 +147,9 @@ function Home() {
             {/* Msg */}
             <div>
               <p className="text-[15px] relative ">
-                <span className="font-[800] sm:w-full  hover:text-[#0a317b]">Kimberly Smith </span>
+                <span className="font-[800] sm:w-full  hover:text-[#0a317b]">
+                  Kimberly Smith{" "}
+                </span>
                 commented on your picture
               </p>
               <p className="text-[13px] opacity-[0.7] ">1 week ago</p>
@@ -144,15 +164,21 @@ function Home() {
           </div>
 
           {/* Single content */}
-          <div className="flex  relative px-3 py-4 cursor-pointer rounded-[8px] items-center justify-start ">
+          <div className="flex relative px-3 py-4 cursor-pointer rounded-[8px] items-center justify-start ">
             {/* Img */}
-            <div className="mr-3   w-[60px] ">
-              <img src={nathan} className="h-[40px] w-[40px] " alt="" />
+            <div className="mr-3 w-[40px] rounded-[50%] h-[40px]">
+              <img
+                src={nathan}
+                className="h-full w-full object-cover"
+                alt=""
+              />
             </div>
             {/* Msg */}
             <div>
               <p className="text-[15px] relative ">
-                <span className="font-[800] hover:text-[#0a317b]">Nathan Peterson </span>
+                <span className="font-[800] hover:text-[#0a317b]">
+                  Nathan Peterson{" "}
+                </span>
                 reacted to your recent post{" "}
                 <span className="font-[800] hover:text-[#0a317b] opacity-[0.7] ">
                   {" "}
@@ -172,7 +198,9 @@ function Home() {
             {/* Msg */}
             <div>
               <p className="text-[15px] relative ">
-                <span className="font-[800] hover:text-[#0a317b]">Anna Kim </span>
+                <span className="font-[800] hover:text-[#0a317b]">
+                  Anna Kim{" "}
+                </span>
                 left the group Chess Club
               </p>
               <p className="text-[13px] opacity-[0.7] ">2 weeks ago</p>
