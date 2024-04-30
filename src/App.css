@@ -1,0 +1,69 @@
+body{
+    overflow-x: hidden;
+    
+}   
+/* font-family: "Inter", sans-serif;
+  font-optical-sizing: auto; */
+  .inter{
+     font-family: "Inter", sans-serif;
+  }
+.red{
+    background-color: hsl(1, 90%, 64%);
+}
+.blue{
+    background-color:#0a317b
+}
+.white{
+    background-color: hsl(0, 0%, 100%);
+}
+.gb{
+    background-color:#e5effa
+}
+.vlgb{
+    background-color: hsl(210, 60%, 98%)
+}
+.dgb{
+    background-color: hsl(219, 12%, 42%)
+}
+.vdb{
+    background-color: hsl(224, 21%, 14%)
+}
+.vdbc {
+    color: hsl(224, 21%, 14%)
+}
+.bc {
+    color: hsl(219, 85%, 26%)
+}
+*{
+ padding: 0px;
+ font:500;
+ /* user-select: none; */
+ margin: 0px;
+ font-family: Plus Jakarta Sans,
+ sans-serif;
+}
+/* 
+.sb::-webkit-scrollbar{
+    background-color: rgba(128, 128, 128, 0.13);
+    visibility: hidden;
+}
+.sb::-webkit-scrollbar-thumb {
+    background-color: rgba(128, 128, 128, 0.323);
+    visibility: hidden;
+}
+.sb::-webkit-scrollbar-track{
+    height: 10vh;
+}
+.input::placeholder{
+    opacity: 1;
+    border-radius: 10px;
+    text-transform: capitalize;
+    font-size: 18px;
+    font-weight: 600;
+} */
+@media (max-width: 640px){
+    *{
+        user-select: none;       
+    }
+  
+}
