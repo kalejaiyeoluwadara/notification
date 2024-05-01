@@ -35,9 +35,10 @@ const getColorAndImage = (title) => {
 };
 
   return (
-    <div className="vdb min-h-screen sm:px-8 flex items-center justify-center w-screen ">
+    <div className="vdb sm:min-h-screen h-auto sm:py-0 py-12 sm:px-8  flex items-center justify-center w-screen ">
       <div className="sm:w-[90%] w-full flex gap-8 h-[400px]   ">
         {/* First Panel */}
+        <div></div>
         <section className=" db rounded-xl h-full w-[20%]   ">
           <div className=" b rounded-xl h-[70%] w-full   "></div>
         </section>
@@ -50,14 +51,14 @@ const getColorAndImage = (title) => {
             return (
               <div
                 key={id}
-                className={`h-[200px] z-20  relative ${color} w-[220px] rounded-xl `}
+                className={`h-[200px] z-20 cursor-pointer relative ${color} w-[220px] rounded-xl `}
               >
                 <img
-                  src={im} // Use the dynamic image source
+                  src={image} // Use the dynamic image source
                   className="absolute h-[60px] right-2 top-[1px]"
                   alt=""
                 />
-                <div className="h-[160px] z-40 px-6 py-3 text-white absolute bottom-0 db w-full mt-10 rounded-t-[20px] rounded-b-[10px] ">
+                <div className="h-[160px] z-40 px-6 py-3 text-white absolute bottom-0 hover:-bottom-4 transition-all db w-full mt-10 rounded-t-[20px] rounded-b-[10px] ">
                   <section className="flex items-center font-[600] w-full justify-between ">
                     <p>{title}</p>
                     <img src={ellipsis} className="" alt="" />
