@@ -1,5 +1,5 @@
 .b{
-    background-color: hsl(246, 80%, 60%);
+    background-color: #5847eb;
 }
 .lrw{
     background-color: hsl(15, 100%, 70%);
@@ -8,7 +8,9 @@
     background-color: hsl(195, 74%, 62%);
 }
 
-
+body{
+    background-color: #0f1424;
+}
 .lrs{
         background-color: hsl(348, 100%, 68%);
 }
@@ -22,13 +24,13 @@
         background-color: hsl(43, 84%, 65%);
 }
 .vdb {
-        background-color: hsl(226, 43%, 10%);
+        background-color: #0f1424;
 }
 .db {
     background-color: rgb(28, 31, 74);
 }
 .dsb {
-    background-color: hsl(235, 45%, 61%);
+    background-color: #6f76c8;
 }
 .pb{
     background-color: hsl(236, 100%, 87%);

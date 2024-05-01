@@ -35,31 +35,39 @@ const getColorAndImage = (title) => {
 };
 
   return (
-    <div className="vdb  h-auto  py-20  sm:px-8  flex items-center justify-center w-screen ">
-      <div className="sm:w-[90%] w-full flex gap-2 h-[500px]   ">
+    <div className="vdb  sm:h-auto h-auto  py-10 sm:py-20  sm:px-8 px-4 flex items-center justify-center w-screen ">
+      <div className="sm:w-[90%] w-full flex sm:flex-row flex-col gap-2 h-full sm:h-[500px]   ">
         {/* First Panel */}
-        
-        <section className=" db rounded-xl h-[500px] w-[20%]   ">
+
+        <section className=" db rounded-xl sm:h-[500px] h-[200px] sm:w-[20%] w-full   ">
           <div className=" b rounded-xl h-[65%] w-full   ">
             {/* Text details */}
-            <div className="text-white py-8 px-4 ">
-          <img className="h-[70px] border-[2px] border-white rounded-[50%] " src={jeremy} alt="" />
-          <h4 className="text-[13px] mt-6 opacity-[0.6] font-[400] ">Report for</h4>
-          <section className='flex flex-col font-[300] leading-tight text-[40px] '>
-            <h3>Jeremy </h3>
-            <h3>Robson</h3>
-          </section>
-        </div>
+            <div className="text-white  sm:block flex items-center justify-center gap-4 py-8 px-4 ">
+              <img
+                className="h-[70px] border-[2px] border-white rounded-[50%] "
+                src={jeremy}
+                alt=""
+              />
+              <div className="sm:block flex items-start justify-center flex-col">
+                <h4 className="text-[13px] sm:mt-6 opacity-[0.6] font-[400] ">
+                  Report for
+                </h4>
+                <section className="flex sm:flex-col sm:gap-0 gap-1 font-[300] leading-tight text-[30px] sm:text-[40px] ">
+                  <h3>Jeremy </h3>
+                  <h3>Robson</h3>
+                </section>
+              </div>
+            </div>
           </div>
 
-          <div className="flex flex-col w-full items-start py-4 justify-center gap-6 font-[500 text-[18px] px-8 text-white">
-            {['daily','weekly','monthly'].map((d,id) =>{
+          <div className="flex sm:flex-col w-full items-start py-4 justify-center gap-6 font-[500 text-[18px] px-8 text-white">
+            {["daily", "weekly", "monthly"].map((d, id) => {
               return (
                 <button
                   key={id}
-                  onClick={(() =>{
-                    setTime(d)
-                  })}
+                  onClick={() => {
+                    setTime(d);
+                  }}
                   className={` ${
                     d === time ? "opacity-[1]" : "opacity-60"
                   } capitalize hover:opacity-[1] transition-all `}
@@ -71,7 +79,7 @@ const getColorAndImage = (title) => {
           </div>
         </section>
         {/* Minor Panels */}
-        <section className="  flex flex-wrap  justify-evenly items-center  rounded-xl h-full w-[80%]   ">
+        <section className="  flex flex-wrap my-8 sm:my-0 justify-center sm:justify-evenly items-center sm:gap-0 gap-4  rounded-xl h-full w-full sm:w-[80%]   ">
           {/* Single elements */}
           {lists.map((list, id) => {
             const { title, timeframes } = list;
@@ -79,20 +87,20 @@ const getColorAndImage = (title) => {
             return (
               <div
                 key={id}
-                className={`h-[220px] z-20 cursor-pointer relative ${color} w-[220px] rounded-xl `}
+                className={`sm:h-[220px] h-[180px] z-20 cursor-pointer relative ${color} w-[95%] sm:w-[220px] rounded-xl `}
               >
                 <img
                   src={image} // Use the dynamic image source
                   className="absolute h-[60px] right-2 top-[1px]"
                   alt=""
                 />
-                <div className="h-[160px] z-40 px-6 py-3 text-white absolute bottom-0 hover:-bottom-4 transition-all db w-full mt-10 rounded-t-[20px] rounded-b-[10px] ">
+                <div className="sm:h-[160px] h-[120px] z-40 px-6 py-3 text-white absolute bottom-0 sm:hover:-bottom-4 hover:bg-[#6f76c8] transition-all db w-full left-0 mt-10 rounded-t-[20px] rounded-b-[10px] ">
                   <section className="flex items-center font-[600] w-full justify-between ">
                     <p>{title}</p>
                     <img src={ellipsis} className="" alt="" />
                   </section>
-                  <section>
-                    <p className="text-[35px] font-[300] my-2 ">
+                  <section className="sm:block flex w-full justify-between items-end  " >
+                    <p className="text-[35px] font-[300] sm:my-2 ">
                       {timeframes[time].current}hrs
                     </p>
                     <p className="font-[400] text-[16px] opacity-[0.6] ">
