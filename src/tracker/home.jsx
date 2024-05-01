@@ -14,7 +14,7 @@ function Home() {
   const [lists, setLists] = useState(data);
   const [color, setColor] = useState("lrw");
   const [im, setIm] = useState(work); // Default image
-
+  const [time,setTime] = useState('weekly')
 const getColorAndImage = (title) => {
   switch (title) {
     case "Work":
@@ -35,15 +35,43 @@ const getColorAndImage = (title) => {
 };
 
   return (
-    <div className="vdb sm:min-h-screen h-auto sm:py-0 py-12 sm:px-8  flex items-center justify-center w-screen ">
-      <div className="sm:w-[90%] w-full flex gap-8 h-[400px]   ">
+    <div className="vdb  h-auto  py-20  sm:px-8  flex items-center justify-center w-screen ">
+      <div className="sm:w-[90%] w-full flex gap-2 h-[500px]   ">
         {/* First Panel */}
-        <div></div>
-        <section className=" db rounded-xl h-full w-[20%]   ">
-          <div className=" b rounded-xl h-[70%] w-full   "></div>
+        
+        <section className=" db rounded-xl h-[500px] w-[20%]   ">
+          <div className=" b rounded-xl h-[65%] w-full   ">
+            {/* Text details */}
+            <div className="text-white py-8 px-4 ">
+          <img className="h-[50px]" src={jeremy} alt="" />
+          <h4 className="text-[13px] mt-6 opacity-[0.6] font-[400] ">Report for</h4>
+          <section className='flex flex-col font-[300] leading-tight text-[40px] '>
+            <h3>Jeremy </h3>
+            <h3>Robson</h3>
+          </section>
+        </div>
+          </div>
+
+          <div className="flex flex-col w-full items-start py-4 justify-center gap-6 font-[500 text-[18px] px-8 text-white">
+            {['daily','weekly','monthly'].map((d,id) =>{
+              return (
+                <button
+                  key={id}
+                  onClick={(() =>{
+                    setTime(d)
+                  })}
+                  className={` ${
+                    d === time ? "opacity-[1]" : "opacity-60"
+                  } capitalize hover:opacity-[1] transition-all `}
+                >
+                  {d}
+                </button>
+              );
+            })}
+          </div>
         </section>
         {/* Minor Panels */}
-        <section className="  flex flex-wrap gap-12 items-start rounded-xl h-full w-[80%]   ">
+        <section className="  flex flex-wrap  justify-evenly items-center  rounded-xl h-full w-[80%]   ">
           {/* Single elements */}
           {lists.map((list, id) => {
             const { title, timeframes } = list;
@@ -51,7 +79,7 @@ const getColorAndImage = (title) => {
             return (
               <div
                 key={id}
-                className={`h-[200px] z-20 cursor-pointer relative ${color} w-[220px] rounded-xl `}
+                className={`h-[220px] z-20 cursor-pointer relative ${color} w-[220px] rounded-xl `}
               >
                 <img
                   src={image} // Use the dynamic image source
