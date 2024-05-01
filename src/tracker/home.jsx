@@ -43,7 +43,7 @@ const getColorAndImage = (title) => {
           <div className=" b rounded-xl h-[65%] w-full   ">
             {/* Text details */}
             <div className="text-white py-8 px-4 ">
-          <img className="h-[50px]" src={jeremy} alt="" />
+          <img className="h-[70px] border-[2px] border-white rounded-[50%] " src={jeremy} alt="" />
           <h4 className="text-[13px] mt-6 opacity-[0.6] font-[400] ">Report for</h4>
           <section className='flex flex-col font-[300] leading-tight text-[40px] '>
             <h3>Jeremy </h3>
