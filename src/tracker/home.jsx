@@ -93,10 +93,10 @@ const getColorAndImage = (title) => {
                   </section>
                   <section>
                     <p className="text-[35px] font-[300] my-2 ">
-                      {timeframes.weekly.current}hrs
+                      {timeframes[time].current}hrs
                     </p>
                     <p className="font-[400] text-[16px] opacity-[0.6] ">
-                      Last Week - {timeframes.weekly.previous}hrs
+                      Last Week - {timeframes[time].previous}hrs
                     </p>
                   </section>
                 </div>
